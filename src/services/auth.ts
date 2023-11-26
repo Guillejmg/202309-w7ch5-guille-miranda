@@ -28,9 +28,9 @@ export abstract class Auth {
     return jwt.sign(payload, Auth.secret!)// Exclamacion para que no pueda vale null
   }
 
-  static verifyAndGetPayload (tokken: string){
+  static verifyAndGetPayload (token: string){
     try{ // Esto es por que si no lo homogeneizo me saldra un error que da a confucion asi qeu quiero controlarlo
-    const result = jwt.verify(tokken, Auth.secret!);
+    const result = jwt.verify(token, Auth.secret!);
     if (typeof result ===  'string') throw new HttpError(498, 'Invalid token', result)
     return result as TokenPayload;
     }catch(error){

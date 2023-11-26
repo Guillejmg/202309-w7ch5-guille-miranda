@@ -14,7 +14,7 @@ const controller = new ManualController(repo);
 const interceptor = new AuthInterceptor();
 
 manualRouter.get('/', 
-interceptor.authoritation.bind(controller),
+interceptor.authorization.bind(controller),
 controller.getAll.bind(controller));
 
 manualRouter.get('/:id', controller.getById.bind(controller));
@@ -23,16 +23,16 @@ manualRouter.get('/search', controller.search.bind(controller));
 
 manualRouter.patch(
   '/:id',
-  interceptor.authoritation.bind(interceptor),
+  interceptor.authorization.bind(interceptor),
   interceptor.authenticationManual.bind(interceptor),
-   controller.update.bind(controller));
+  controller.update.bind(controller));
 
 manualRouter.post(
   '/',
-interceptor.authoritation.bind(interceptor),
- controller.create.bind(controller));
+interceptor.authorization.bind(interceptor),
+controller.create.bind(controller));
 
 manualRouter.delete('/:id',
-interceptor.authoritation.bind(interceptor),
-  interceptor.authenticationManual.bind(interceptor),
+interceptor.authorization.bind(interceptor),
+interceptor.authenticationManual.bind(interceptor),
 controller.delete.bind(controller));

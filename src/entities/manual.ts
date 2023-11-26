@@ -7,7 +7,6 @@ export type ManualStructure ={
   name: string;
   ingredients: string;
   description: string;
-  notes: string;
   onMenu: boolean;
   
 }

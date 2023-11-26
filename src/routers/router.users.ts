@@ -18,6 +18,6 @@ usersRouter.post('/register', controller.create.bind(controller));
 usersRouter.post('/login', controller.login.bind(controller));
 usersRouter.patch(
   '/login',
-  interceptor.authoritation.bind(interceptor),
+  interceptor.authorization.bind(interceptor),
   controller.login.bind(controller)
 );

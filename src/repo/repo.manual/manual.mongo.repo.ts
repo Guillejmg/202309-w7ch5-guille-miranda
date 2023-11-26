@@ -85,8 +85,10 @@ constructor(){
 
     const userID = result.employee.id;
     const user = await this.userRepo.getById(userID);
-    const manual = new mongoose.mongo.ObjectId(id) as unknown as ManualStructure;
-    user.notes = user.notes.filter((item) => item !== manual);
+    user.notes = user.notes.filter((item) => {
+      const itemID = item as unknown as mongoose.mongo.ObjectId;
+      return itemID.toString() !== id;
+    });
     await this.userRepo.update(userID, user);
 
   }

@@ -1,73 +1,25 @@
-# Week6
+Week 7 - Challenge WeekEnd
+Red social
+Crea una red social con React. La aplicación sólo se puede usar estando logueado (en abierto únicamente se puede ver login y registro), y una vez iniciada la sesión, el usuario puede ver un listado de todos los usuarios de la red.
 
-Código de Week7 / Server - Express
+El usuario podrá editar su perfil.
 
-- Node
-- Express
-- Mongo (Mongoose)
+De cada usuario podrá ver su perfil, y podrá añadirlo como amigo o como enemigo (o cambiar entre ambos). Es decir, yo como usuario veo todos los demás usuarios, y además puedo tener una relación con algunos de ellos. Esa relación puede ser de amigo o de enemigo (recuerda: puede no haber relación).
 
-- TS...
+En el listado de usuarios debe poder haber un filtro para enseñar:
 
-## Installation
+todos los usuarios
+sólo los amigos
+sólo los enemigos
+El listado debe mostrar el total de usuarios (o amigos/enemigos si se ha usado el filtro).
 
-- TS
+La red social consumirá los datos de una API desarrollada con Express, conectada a una base de datos en MongoDB. La validación de usuario se implementará mediante JWT.
 
-```shell
-npm i -D typescript
-```
+Extra
+La API mantendrá un log de todas las relaciones, almacenado en un archivo de texto en el servidor. Cada vez que se cree o destruya una relación (de cualquiera de los dos tipos), se debe añadir una línea al log, con uno de estos tres formatos:
 
-- config TS
+New relationship: Luis & Marta (friends)
 
-```shell
-npx tsc --init
-```
+New relationship: Luis & Marta (enemies)
 
-- eslint & TS
-
-```shell
-npx eslint --init
-
-Consecuencia
-npm i -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-xo
-```
-
-- eslint + prettier
-
-```shell
-npm i -D eslint-config-prettier
-```
-
-- Jest
-
-```shell
-
-npm i -D jest ts-jest @types/jest @types/node jest-ts-webcompat-resolver
-```
-
-- .editorconfig
-- .gitignore
-- npm init
-- git init
-
-
-## Express
-
-```shell
-npm i express
-npm i -D @types/express
-```
-
-## DataBase
-
-### Relational (SQL)
-
-### No Relational (NoSQL) - Documents
-
-- MongoDB (ODM: Mongoose)
-
-
-## Relaciones
-
-entity1---1-------n---entity2
-entity1---n-------n---entity2
-# social-app-backend
+Removed relationship: Luis & Marta

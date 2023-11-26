@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-constructor */
-import { Repository } from '../repo/repo';
+import { Repository } from '../repo/repo.js';
 import { NextFunction, Request, Response } from 'express';
 
 export abstract class Controller<T extends { id: unknown }> {

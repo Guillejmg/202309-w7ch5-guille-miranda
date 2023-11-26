@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { HttpError } from 'http-errors'
+import { HttpError } from '../services/http.error.js'
 import createDebug from 'debug';
 import mongoose, {Error} from 'mongoose';
 const debug = createDebug('W7E:error:middleware');
