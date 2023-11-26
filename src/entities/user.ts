@@ -1,4 +1,4 @@
-import { ManualStructure } from "./manual"
+import { ManualStructure } from "./manual.js"
 
 export type LoginUser = {
 
