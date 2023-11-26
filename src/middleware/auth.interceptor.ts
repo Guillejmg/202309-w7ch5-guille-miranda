@@ -12,15 +12,15 @@ export class AuthInterceptor {
     debug('Instantiated');
   }
 
-    authoritation(req: Request, res: Response, next: NextFunction ){
+    authorization(req: Request, res: Response, next: NextFunction ){
 
       try{ 
-        const tokenHeader = req.get('Authoritation');
+        const tokenHeader = req.get('Authorization');
         if(!tokenHeader?.startsWith('Bearer')) 
           throw new HttpError(401, 'Unauthorized');
         const token = tokenHeader.split(' ')[1]// Aislamos el tokken de la construccion del header
         const tokenPayload = Auth.verifyAndGetPayload(token);
-          req.body.userID = tokenPayload.id;// Reescribo con el tokken el del bodi por que alguien lo podria haber manipulado, por lo tantto me fio mas del que viene con el tokken
+          req.body.userid = tokenPayload.id;// Reescribo con el tokken el del bodi por que alguien lo podria haber manipulado, por lo tantto me fio mas del que viene con el tokken
           next();
       } catch(error){
         next(error)

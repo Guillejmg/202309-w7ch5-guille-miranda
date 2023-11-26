@@ -16,9 +16,6 @@ const manualSchema = new Schema<ManualStructure>({
     type: String,
     required: true,
   },
-  notes:{
-    type: String,
-  },
   onMenu:{
     type: Boolean,
     required: true,

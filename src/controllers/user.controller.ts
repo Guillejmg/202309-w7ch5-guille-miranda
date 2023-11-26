@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* Eslint-disable no-unused-vars */
 import { Request, Response, NextFunction } from 'express';
 import createDebug from 'debug';
 import { UserMongoRepo } from '../repo/repo.user/users.mongo.repo.js';
@@ -10,15 +10,15 @@ const debug = createDebug('W7E:user:controller')
 
 export class UserController extends Controller<User> {
   constructor(protected repo: UserMongoRepo ){
-    // eslint-disable-next-line constructor-super
+    // Eslint-disable-next-line constructor-super
     super(repo);
     debug('Instantiated')
   }
 
   async login(req: Request, res: Response, next: NextFunction) {
     try {
-      const result = req.body.userId
-        ? await this.repo.getById(req.body.userId)
+      const result = req.body.userid
+        ? await this.repo.getById(req.body.userid)
         : await this.repo.login(req.body);
 
       const data = {

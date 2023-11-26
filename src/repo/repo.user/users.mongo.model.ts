@@ -13,14 +13,14 @@ const usersSchema = new Schema<User>({
   },
   name:{
     type: String,
-    required: true,
+    required: false,
   },
   surname: String, // Si solo pones propiedad y tipo es un ataja para cuando solo quieres definir el tipo
   age: Number,
   notes:[
     {
         type: Schema.Types.ObjectId,
-        ref: 'Notes',
+        ref: 'ManualStructure',
     }
   ]
 })
