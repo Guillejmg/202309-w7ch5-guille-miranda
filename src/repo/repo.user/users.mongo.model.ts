@@ -35,4 +35,3 @@ usersSchema.set('toJSON', {
 });
 
 export const UserModel = model('User', usersSchema, 'users');
-

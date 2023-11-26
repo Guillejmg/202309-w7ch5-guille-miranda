@@ -16,7 +16,7 @@ export class AuthInterceptor {
 
       try{ 
         const tokenHeader = req.get('Authoritation');
-         if(!tokenHeader?.startsWith('Bearer')) 
+        if(!tokenHeader?.startsWith('Bearer')) 
           throw new HttpError(401, 'Unauthorized');
         const token = tokenHeader.split(' ')[1]// Aislamos el tokken de la construccion del header
         const tokenPayload = Auth.verifyAndGetPayload(token);
@@ -42,4 +42,3 @@ export class AuthInterceptor {
       }
     }
 }
-
